@@ -51,7 +51,6 @@ AFRAME.registerComponent("gesture-handler", {
 
     handleScale: function (event) {
         if (this.isVisible) {
-            this.initialScale = this.el.object3D.scale.clone(); //reset initial scale if it has been changed
             this.scaleFactor *=
                 1 + event.detail.spreadChange / event.detail.startSpread;
 
