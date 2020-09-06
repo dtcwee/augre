@@ -1,5 +1,5 @@
 # AugRe
-Augmented Reality viewer. Display Augmented Reality (AR) objects from locally stored .GLB files in a smart device's browser. Uses marker-based AR.js.
+Augmented Reality (AR) viewer. Display .GLB 3D models in cross-browser AR using marker-based AR.js.
 
 What makes this project *unique* is the ability to **easily load different models/files**.
 
@@ -16,10 +16,14 @@ In short:
 1. Point your device camera at the marker.
 1. Open a [web page](https://dtcwee.github.com/augre/marker.html).
 
+Watch demo:
+
+<a href="https://youtu.be/nNwno9vzTm4"><img title="Watch Demo" src="img/GooseAR.jpg" height="180"></a>
+
 ### Get 3D models
 1. Get some 3D models. Try [poly.gogle.com](https://poly.gogle.com).
 2. Your models need to be in single-file .GLB format. You can [convert .gltf to .GLB files here](https://sbtron.github.io/makeglb/).
-3. Finally, transfer the .GLB files to your smart device's local storage.
+3. Finally, transfer the .GLB files to your smart device's storage (local or cloud).
 
 ### Print Marker
 Print these markers:
@@ -37,7 +41,7 @@ Notes:
 ### Open Demo Web Page
 Point your device camera at the marker and open [this web page](https//dtcwee.github.com/augre/marker.html). Allow it to use your camera, if prompted. 
 
-The default '?' model will appear over the marker. Open the hamburger menu to load your file.
+The default '?' model will appear over the marker. Open the hamburger menu to load your file from local storage. You can also load files on **cloud storage (e.g. Google Drive)** provided your file explorer can browse it. 
 
 * * *
 ## Install/Deploy
@@ -72,8 +76,11 @@ a-marker type="barcode" value="8"
 ```
 More details in the [Marker-based AR.js documentation](https://ar-js-org.github.io/AR.js-Docs/marker-based/#a-frame).
 
-#### Error-handling
+#### Error-handling and reset
 You might want to put in some error handling. Particularly if files can't load.
+
+I also add a function to reset the model to the default '?'. I figured you could just refresh the page.
+
 #### Alternate file formats
 .GLB (gltf) has native support in A-Frame, and thus AR.js. There are extensions to support other formats, but there are also many format converters. More details at the [A-Frame gltf-model page](https://aframe.io/docs/1.0.0/components/gltf-model.html).
  * * *
