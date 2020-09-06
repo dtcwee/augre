@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Marker-based AR.js</title>
+  <title>AugRe (Marker-based)</title>
   <!-- import jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -15,7 +15,6 @@
   <script src="./gesture-detector.js"></script>
   <script src="./gesture-handler.js"></script>
   <script src="./positionButtonSet.js"></script>
-  <script src="./scaleButtonSet.js"></script>
   <script src="./fatNav/jquery.fatNav.min.js"></script>
   <script src="./fatNav.Init.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -29,26 +28,24 @@
     <div class="fat-nav__wrapper">
       <ul>
         <li>
-          <div id="scaleButtonSet">
-            <button class="fat-navButton ui-button ui-widget ui-corner-all scaleButton" value="0.9">-</button>
-            <button class="fat-navButton ui-button ui-widget ui-corner-all scaleButton" value="1.1">+</button>
+          <div style="display: none;">
+            <input type="file" id="fileInput" class="fileInput" accept=".glb">
           </div>
+          <button class="fileInputButton fat-navButton ui-button ui-widget ui-corner-all" href="#"><i
+              class="material-icons md-36">folder_open</i>Load .GLB</button>
+        </li>
+        <li>
+          <span class="material-icons">
+            info
+          </span> 1 finger: rotate, Pinch: grow/shrink.
         </li>
         <li>
           <div id="positionButtonSet">
             <button class="fat-navButton ui-button ui-widget ui-corner-all positionButton" value="-0.1"><span
-                class="ui-icon ui-icon-arrowthickstop-1-s"></span></button>
+                class="ui-icon ui-icon-arrowthickstop-1-s"></span>Near</button>
             <button class="fat-navButton ui-button ui-widget ui-corner-all positionButton" value="0.1"><span
-                class="ui-icon ui-icon-arrowthickstop-1-n"></span></button>
+                class="ui-icon ui-icon-arrowthickstop-1-n"></span>Far</button>
           </div>
-        </li>
-        <li>
-          <div style="display: none;">
-            <label for="fileInput">Load .glb:</label>
-            <input type="file" id="fileInput" class="fileInput" accept=".glb">
-          </div>
-          <button class="fileInputButton fat-navButton ui-button ui-widget ui-corner-all" href="#"><i
-              class="material-icons md-36">folder_open</i>Load .glb</button>
         </li>
       </ul>
     </div>
@@ -56,16 +53,10 @@
   <a-scene embedded
     arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3_PARITY65; labelingMode: white_region'
     vr-mode-ui="enabled: false" gesture-detector id="scene">
-    <!-- <a-marker preset="hiro"> -->
     <a-marker type="barcode" value="8" raycaster="objects: .clickable" emitevents="true"
       cursor="fuse: false; rayOrigin: mouse;">
-      <a-entity id="entity" position="0 0 0" scale="0.25 0.25 0.25" gltf-model="gltf/question.glb" class="clickable"
+      <a-entity id="entity" position="0 0 0" scale="1 1 1" gltf-model="glb/question.glb" class="clickable"
         gesture-handler="minScale: 0.25; maxScale: 10"></a-entity>
-      <!-- <a-entity
-          position="0 0 0"
-          scale="0.05 0.05 0.05"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-        ></a-entity> -->
     </a-marker>
     <a-entity camera></a-entity>
   </a-scene>

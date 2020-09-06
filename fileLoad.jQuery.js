@@ -21,9 +21,8 @@ $(document).ready(function () {
             var reader = new FileReader();
             reader.onload = function (event) {
                 data_url = event.target.result
-                console.log(data_url)
-                console.log(humanFileSize(file.size, "kB"))
-
+                // console.log(data_url)
+                // console.log(humanFileSize(file.size, "kB"))
                 entity.setAttribute("gltf-model", data_url);
                 //when the file is read it triggers the onload event above.
             }
@@ -32,8 +31,8 @@ $(document).ready(function () {
 
         //watch for change on the file input
         $("#fileInput").change(function () {
-            console.log("Model file chosen.")
-            console.log($("#fileInput").val())
+            // console.log("Model file chosen.")
+            // console.log($("#fileInput").val())
             loadModel(this.files[0])
         });
 
