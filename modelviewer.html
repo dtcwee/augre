@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>AugRe (Marker-based)</title>
+  <!-- import jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+    integrity="sha256-Eb0oR5BSMoBpJPdRvwUFK74P93v07XG3xV2O78O6c/I=" crossorigin="anonymous"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
+  <script src="./js/fileLoad.jQuery.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <input type="file" id="fileInput" class="fileInput" accept=".glb, .GLB">
+        <button class="fileInputButton fat-navButton ui-button ui-widget ui-corner-all" href="#"><i
+            class="material-icons md-36">folder_open</i>Load .GLB</button>
+    </div>
+    <div>
+      <model-viewer id="viewer" src="glb/question.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="assets/poster.webp" shadow-intensity="1">
+      </model-viewer>
+    </div>
+    <div>Explanatory Text</div>
+</body>
+
+</html>
