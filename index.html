@@ -3,32 +3,42 @@
 
 <head>
   <title>AugRe Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- import jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+    integrity="sha256-Eb0oR5BSMoBpJPdRvwUFK74P93v07XG3xV2O78O6c/I=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
-  <h1>AugRe - Augmented Reality Viewers</h1>
-  <p>Various Augmented Reality viewers for .GLB 3D Models.</p>
+  <div class="ui-widget card">
+    <h1 class="ui-widget-header ui-corner-top">AugRe - Augmented Reality Viewers</h1>
+    <div class="ui-widget-content ui-corner-bottom">
+        <p>Various Augmented Reality viewers for .GLB 3D Models.</p>
 
-  <h2>Model-Viewer</h2>
-  <p><a href="modelviewer.html">Uses WebXR</a> to display .GLB 3D Models on supported hardware. (Recommended)</p>
+        <div class="ui-widget-content ui-corner-all">
+            <h2>Model-Viewer</h2>
+            <p><a href="modelviewer.html">Uses WebXR</a> to display .GLB 3D Models on supported hardware. (Recommended)</p>
+        </div>
 
-  <h2>AR.js</h2>
-    <p>
-    Display .GLB 3D Models <a href="marker.html">atop a marker</a> using software.
-    </p>
-    <p>
-    <img src="img/GooseAR.jpg" height="180">
-    </p>
+        <div class="ui-widget-content ui-corner-all">
+            <h2>AR.js</h2>
+            <p>Display .GLB 3D Models <a href="marker.html">atop a marker</a> using software.</p>
+            <p><img src="img/GooseAR.jpg" height="180"></p>
 
-  <h3>Marker Downloads</h3>
-  <p>
-  <ul>
-    <li><a href="img/8-3x3parity65b.png"> "8" 3x3 black </a> parity (6,5) barcode marker. Black border, white quiet zone.
-    </li>
-    <li><a href="img/8-3x3parity65w.png"> "8" 3x3 white </a> parity (6,5) barcode marker. White border, black quiet zone.
-    </li>
-  </ul>
-  </p>
-  <p><a href="https://github.com/dtcwee/augre">AugRe project</a> on GitHub.</p>
+            <div class="ui-widget-content ui-corner-all">
+                <h3>Marker Downloads</h3>
+                <ul>
+                    <li><a href="img/8-3x3parity65b.png"> "8" 3x3 black </a> parity (6,5) barcode marker.</li>
+                    <li><a href="img/8-3x3parity65w.png"> "8" 3x3 white </a> parity (6,5) barcode marker.</li>
+                </ul>
+            </div>
+        </div>
+        <p><a href="https://github.com/dtcwee/augre">AugRe project</a> on GitHub.</p>
+    </div>
+  </div>
 </body>
 </html>
